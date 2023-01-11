@@ -1,0 +1,15 @@
+{
+  "name": "sprint_1",
+  "version": "1.0.0",
+  "description": "layout of messenger from the first sprint",
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "keywords": [],
+  "author": "Roman Kamshilov <roman.kamshilov@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.8.2"
+  }
+}
