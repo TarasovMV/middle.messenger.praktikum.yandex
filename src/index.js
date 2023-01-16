@@ -1,7 +1,12 @@
-const root = document.getElementById('root');
+import tpl from './index.hbs';
+import './styles.css';
 
-const sum = (a, b) => {
-    return a + b
+const data = {
+    layout: 'шаблон',
 };
 
-root.textContent = sum(7, 9).toString();
+console.log(tpl)
+
+document.getElementById('root').innerHTML = tpl({
+    layout: 'шаблон',
+});
