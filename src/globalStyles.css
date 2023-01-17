@@ -1,14 +1,23 @@
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    -ms-overflow-style: none;
     font-family: Inter, sans-serif;
     font-style: normal;
-    font-weight: 400;
+}
+
+h1, h2, h3 {
+    padding: 0;
+    margin: 0;
 }
 
 @font-face {
     font-family: Inter;
-    src: url("../static/fonts/AnyConv.com__Inter-Black.woff") format("woff");
+    src: url("../static/fonts/AnyConv.com__Inter-Medium.woff") format("woff");
 }
 
