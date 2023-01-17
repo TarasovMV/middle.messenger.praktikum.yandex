@@ -1,12 +1,9 @@
 import tpl from './index.hbs';
-import './styles.css';
+// import './globalStyles.css';
 
 const data = {
     layout: 'шаблон',
 };
 
-console.log(tpl)
+document.getElementById('root').innerHTML = tpl(data);
 
-document.getElementById('root').innerHTML = tpl({
-    layout: 'шаблон',
-});
