@@ -1,0 +1,40 @@
+{{#each this.persons}}
+    <div class="main__chatItem">
+        {{#if photo}}
+            <img class="photoImg__chatItem" src="{{photo}}" />
+        {{/if}}
+        {{#unless photo}}
+            <div class="photo__chatItem">
+            </div>
+        {{/unless}}
+        <div class="wrapInfo__chatItem">
+            <div class="info__chatItem">
+                <div class="name__chatItem">
+                    {{name}}
+                </div>
+                <div class="time__chatItem">
+                    {{time}}
+                    {{dayOfWeek}}
+                    {{date}}
+                </div>
+            </div>
+            <div class="messageAndCount__chatItem">
+                <div class="message__chatItem">
+                    {{#if you}}
+                        <span>
+                            Вы:&nbsp;
+                        </span>
+                    {{/if}}
+                    <span class="textMessage__chatItem">
+                        {{message}}
+                    </span>
+                </div>
+                {{#if isUnread}}
+                    <div class="count__chatItem">
+                        {{countUnreadMessage}}
+                    </div>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+{{/each}}

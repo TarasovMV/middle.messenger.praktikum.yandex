@@ -1,1 +1,12 @@
-<h2>Привет, мой первый {{layout}}</h2>
+<div class="indexPage">
+    <h2>Главная страница навигации</h2>
+
+    <ul class="index__ul">
+        {{#each this.pages}}
+            <li>
+                <a href="{{link}}">{{title}}</a>
+            </li>
+        {{/each}}
+    </ul>
+</div>
+
