@@ -5,6 +5,19 @@
     width: 100%;
     padding: 12px 0;
     border-top: 1px solid #EAEAEA;
+    z-index: 500;
+    position: relative;
+}
+
+.mainSelected__chatItem {
+    margin-top: 2px;
+    background-color: #E4EDFD;
+    width: calc(100% + 20px);
+    height: calc(100% - 4px);
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: -10px;
 }
 
 .photoImg__chatItem {

@@ -1,0 +1,31 @@
+.container__chat {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px 10px 20px;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.messages__chat {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+}
+
+.date__chat {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 30px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 12px;
+    color: #999999;
+}
+
+.incoming__chat {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}

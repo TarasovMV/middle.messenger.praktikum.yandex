@@ -1,5 +1,8 @@
 {{#each this.persons}}
     <div class="main__chatItem">
+        {{#if selected}}
+            <div class="mainSelected__chatItem"></div>
+        {{/if}}
         {{#if photo}}
             <img class="photoImg__chatItem" src="{{photo}}" />
         {{/if}}

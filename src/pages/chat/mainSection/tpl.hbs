@@ -1,1 +1,9 @@
-<p>Главная часть</p>
+<div class="container__mainSection">
+    {{#if chat}}
+        {{{chat}}}
+    {{/if}}
+    {{#unless chat}}
+        {{{noChat}}}
+    {{/unless}}
+</div>
+

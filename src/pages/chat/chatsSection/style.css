@@ -5,6 +5,7 @@
     padding: 21px 10px 0 10px;
     align-items: flex-end;
     overflow-y: auto;
+    background-color: #FBFBFB;
 }
 
 .main__chatsSection::-webkit-scrollbar {
