@@ -56,6 +56,15 @@
     color: #999999;
 }
 
+.wrapDate__chat {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(239, 239, 239, 0.5);
+    padding: 4px 7px;
+    border-radius: 8px;
+}
+
 .incoming__chat {
     display: flex;
     flex-direction: column;
