@@ -2,23 +2,33 @@
     <div class="header__chat">
         <div class="userInfo__chat">
             <div class="avatar__chat">
-                {{photo}}
+                <img src="{{photo}}" />
             </div>
             <div class="name__chat">
                 {{name}}
             </div>
         </div>
-        <img src="{{settingsSvg}}" class="settingsImg__chat" />
+        <img src="{{settingsSvg}}" />
     </div>
     <div class="messages__chat">
-        <div class="date__chat">
-            {{date}}
+        <div class="messagesIncoming__chat">
+            <div class="date__chat">
+                {{date}}
+            </div>
+            <div class="incoming__chat">
+                {{{incomingMessage}}}
+                {{{photoMessage}}}
+            </div>
         </div>
-        <div class="incoming__chat">
-            {{{incomingMessage}}}
-            {{{photoMessage}}}
+        <div class="messagesSent__chat">
+            {{{sentMessage}}}
         </div>
-
+        <div class="footer__chat">
+            <img src="{{clipSvg}}" class="clipSvg__chat" />
+            {{{inputMessage}}}
+            <img src="{{sent}}" class="sentSvg__chat" />
+        </div>
     </div>
+
 </div>
 
