@@ -48,6 +48,9 @@ const indexPage = (data) => {
 
 const domain = window.location.origin;
 
+console.log(domain)
+console.log(window.location.href)
+
 if (window.location.href === `${domain}/`) {
     document.getElementById('root').innerHTML = indexPage(indexData);
 } else if (window.location.href === `${domain}/sign-in`) {
