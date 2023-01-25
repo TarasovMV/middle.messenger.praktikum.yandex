@@ -1,0 +1,37 @@
+.container__inputSettings {
+    width: 100%;
+    padding: 10px 0px;
+    border-bottom: 1px solid #EAEAEA;
+}
+
+.container__inputSettings:last-of-type {
+    border: none;
+}
+
+.container__inputSettings > label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 13px;
+}
+
+.container__inputSettings > label:hover {
+    cursor: pointer;
+}
+
+.container__inputSettings > label > input {
+    display: flex;
+    justify-content: flex-end;
+    border: none;
+    outline: none;
+    color: #999999;
+    text-align: right;
+}
+
+.container__inputSettings > label > input:hover {
+    cursor: pointer;
+}

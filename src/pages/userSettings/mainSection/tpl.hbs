@@ -1,0 +1,19 @@
+<div class="container__mainSectionSettings">
+    <div class="header__mainSectionSettings">
+        {{#if photo}}
+            <img class="photoImg__mainSectionSettings" src="{{photo}}" />
+        {{/if}}
+        {{#unless photo}}
+            <div class="photo__mainSectionSettings">
+                <img src="{{noAvatar}}" />
+            </div>
+        {{/unless}}
+        <div class="name__mainSectionSettings">
+            {{name}}
+        </div>
+    </div>
+    <form autocomplete="off">
+        {{{input}}}
+    </form>
+    {{{buttonSettings}}}  
+</div>

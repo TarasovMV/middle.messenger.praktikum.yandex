@@ -1,0 +1,10 @@
+{{#each this.inputs}}
+    <div class="container__inputSettings">
+        <label>
+            <div class="label__inputSettings">
+                {{label}}
+            </div>
+            <input name="{{name}}" value="{{value}}" type="{{type}}" {{#if disable}}readonly{{/if}} />
+        </label>
+    </div>
+{{/each}}
