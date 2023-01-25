@@ -1,13 +1,13 @@
 import tpl from './index.hbs';
 import './style.css';
 import chatPage from "./pages/chat";
-import authorizationPage from "./pages/authorization";
+import authorizationPage, {dataAuthorization, dataRegistration} from "./pages/authorization";
 import registrationPage from "./pages/registration";
 import userSettingsPage from "./pages/userSettings";
 import page400 from "./pages/400";
 import page500 from "./pages/500";
 
-const data = {
+const indexData = {
     pages: [
         {
             title: 'Страница авторизации',
@@ -16,8 +16,8 @@ const data = {
         },
         {
             title: 'Страница регистрации',
-            link: 'registration',
-            pageFunction: registrationPage,
+            link: 'sign-up',
+            pageFunction: authorizationPage,
         },
         {
             title: 'Страница списка чатов и ленты переписок',
@@ -42,24 +42,24 @@ const data = {
     ]
 };
 
-const domain = 'http://localhost:1234/'; //todo - надо поправить, чтобы через любой адрес запускалось
-
-const indexPage = () => {
+const indexPage = (data) => {
     return tpl(data);
 };
 
-if (window.location.href === domain) {
-    document.getElementById('root').innerHTML = indexPage();
-} else if (window.location.href === `${domain}sign-in`) {
-    document.getElementById('root').innerHTML = authorizationPage();
-} else if (window.location.href === `${domain}registration`) {
-    document.getElementById('root').innerHTML = registrationPage();
-} else if (window.location.href === `${domain}chat`) {
+const domain = window.location.origin;
+
+if (window.location.href === `${domain}/`) {
+    document.getElementById('root').innerHTML = indexPage(indexData);
+} else if (window.location.href === `${domain}/sign-in`) {
+    document.getElementById('root').innerHTML = authorizationPage(dataAuthorization);
+} else if (window.location.href === `${domain}/sign-up`) {
+    document.getElementById('root').innerHTML = authorizationPage(dataRegistration);
+} else if (window.location.href === `${domain}/chat`) {
     document.getElementById('root').innerHTML = chatPage();
-} else if (window.location.href === `${domain}userSettings`) {
+} else if (window.location.href === `${domain}/userSettings`) {
     document.getElementById('root').innerHTML = userSettingsPage();
-} else if (window.location.href === `${domain}500`) {
+} else if (window.location.href === `${domain}/500`) {
     document.getElementById('root').innerHTML = page500();
-} else if (window.location.href === `${domain}404`) {
+} else if (window.location.href === `${domain}/404`) {
     document.getElementById('root').innerHTML = page400();
 } else return document.getElementById('root').innerHTML = page400();

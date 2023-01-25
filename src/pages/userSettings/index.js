@@ -5,18 +5,19 @@ import mainSection from "./mainSection";
 import buttonSettings from "../../components/buttonSettings";
 import * as noAvatar from '../../../static/noAvatar.svg';
 import inputSettings from "../../components/inputSettings";
+import simpleButton from "../../components/simpleButton";
 
 const buttons = {
     buttons: [
         {
             name: 'Изменить данные',
             color: '#3369F3',
-            href: '/'
+            href: '/userSettings'
         },
         {
             name: 'Изменить пароль',
             color: '#3369F3',
-            href: '/'
+            href: '/userSettings'
         },
         {
             name: 'Выйти',
@@ -24,6 +25,11 @@ const buttons = {
             href: '/'
         },
     ]
+};
+
+const simpleButtons = {
+    name: 'Сохранить',
+    type: 'submit',
 }
 
 const inputs = {
@@ -73,12 +79,91 @@ const inputs = {
     ]
 }
 
+const inputsChange = {
+    inputsChange: [
+        {
+            label: 'Почта',
+            name: 'email',
+            value: 'pochta@yandex.ru',
+            type: 'text',
+            disable: false,
+        },
+        {
+            label: 'Логин',
+            name: 'login',
+            value: 'VadimVadimich',
+            type: 'text',
+            disable: false,
+        },
+        {
+            label: 'Имя',
+            name: 'first_name',
+            value: 'Вадим',
+            type: 'text',
+            disable: false,
+        },
+        {
+            label: 'Фамилия',
+            name: 'second_name',
+            value: 'Вадимов',
+            type: 'text',
+            disable: false,
+        },
+        {
+            label: 'Имя в чате',
+            name: 'display_name',
+            value: 'Вадимыч',
+            type: 'text',
+            disable: false,
+        },
+        {
+            label: 'Телефон',
+            name: 'phone',
+            value: '+7 (777) 777-77-77',
+            type: 'text',
+            disable: false,
+        },
+    ],
+};
+
+const inputsChangePassword = {
+    inputsChangePassword: [
+        {
+            label: 'Старый пароль',
+            name: 'oldPassword',
+            value: 'oldPassword123',
+            type: 'password',
+            disable: false,
+        },
+        {
+            label: 'Новый пароль',
+            name: 'newPassword',
+            value: 'newPassword123',
+            type: 'password',
+            disable: false,
+        },
+        {
+            label: 'Повторите новый пароль',
+            name: 'newPassword',
+            value: 'newPassword123',
+            type: 'password',
+            disable: false,
+        },
+    ],
+};
+
 const dataMainSection = {
     photo: false,
     noAvatar: noAvatar,
     name: 'Вадим',
+    normal: true,
     buttonSettings: buttonSettings(buttons),
     input: inputSettings(inputs),
+    change: false,
+    inputChange: inputSettings(inputsChange),
+    changePassword: false,
+    inputsChangePassword: inputSettings(inputsChangePassword),
+    simpleButton: simpleButton(simpleButtons),
 };
 
 const data = {

@@ -8,12 +8,29 @@
                 <img src="{{noAvatar}}" />
             </div>
         {{/unless}}
-        <div class="name__mainSectionSettings">
-            {{name}}
-        </div>
+        {{#if normal}}
+            <div class="name__mainSectionSettings">
+                {{name}}
+            </div>
+        {{/if}}
     </div>
-    <form autocomplete="off">
-        {{{input}}}
-    </form>
-    {{{buttonSettings}}}  
+    {{#if normal}}
+        <form autocomplete="off">
+            {{{input}}}
+        </form>
+        {{{buttonSettings}}}
+    {{/if}}
+    {{#if change}}
+        <form autocomplete="off">
+            {{{inputChange}}}
+        </form>
+        {{{simpleButton}}}
+    {{/if}}
+    {{#if changePassword}}
+        <form autocomplete="off">
+            {{{inputsChangePassword}}}
+        </form>
+        {{{simpleButton}}}
+    {{/if}}
+
 </div>

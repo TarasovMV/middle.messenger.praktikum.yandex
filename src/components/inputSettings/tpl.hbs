@@ -1,10 +1,38 @@
-{{#each this.inputs}}
-    <div class="container__inputSettings">
-        <label>
-            <div class="label__inputSettings">
-                {{label}}
-            </div>
-            <input name="{{name}}" value="{{value}}" type="{{type}}" {{#if disable}}readonly{{/if}} />
-        </label>
-    </div>
-{{/each}}
+{{#if inputs}}
+    {{#each this.inputs}}
+        <div class="container__inputSettings">
+            <label>
+                <div class="label__inputSettings">
+                    {{label}}
+                </div>
+                <input name="{{name}}" value="{{value}}" type="{{type}}" {{#if disable}}readonly{{/if}} />
+            </label>
+        </div>
+    {{/each}}
+{{/if}}
+{{#if inputsChange}}
+    {{#each this.inputsChange}}
+        <div class="container__inputSettings">
+            <label>
+                <div class="label__inputSettings">
+                    {{label}}
+                </div>
+                <input name="{{name}}" value="{{value}}" type="{{type}}" {{#if disable}}readonly{{/if}} />
+            </label>
+        </div>
+    {{/each}}
+{{/if}}
+{{#if inputsChangePassword}}
+    {{#each this.inputsChangePassword}}
+        <div class="container__inputSettings">
+            <label>
+                <div class="label__inputSettings">
+                    {{label}}
+                </div>
+                <input name="{{name}}" value="{{value}}" type="{{type}}" {{#if disable}}readonly{{/if}} />
+            </label>
+        </div>
+    {{/each}}
+{{/if}}
+
+

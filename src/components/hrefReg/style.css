@@ -1,0 +1,11 @@
+.container__hrefReg {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 11px;
+    color: #3369F3;
+    cursor: pointer;
+    text-decoration: none;
+}

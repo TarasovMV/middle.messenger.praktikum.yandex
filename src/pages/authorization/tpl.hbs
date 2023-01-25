@@ -1,2 +1,35 @@
-<p class="p p__authorization">Авторизация</p>
+<div class="main__authorization">
+    <div class="wrap__authorization">
+        {{#if signIn}}
+            <div class="title__authorization">
+                {{titleSignIn}}
+            </div>
+            <div class="wrapForm__authorization">
+                <form autocomplete="off" class="form__authorization">
+                    <div class="wrapInputs__authorization">
+                        {{{inputLoginAuth}}}
+                    </div>
+                </form>
+                <div class="wrapButtons__authorization">
+                    {{{blueButtonSignIn}}}
+                    {{{hrefRegSignIn}}}
+                </div>
+            </div>
+        {{/if}}
+        {{#if signUp}}
+            <div class="title__authorization">
+                {{titleSignUp}}
+            </div>
+            <form autocomplete="off" class="form__authorization">
+                <div class="wrapInputs__authorization">
+                    {{{inputLoginReg}}}
+                </div>
+                <div class="wrapButtons__authorization">
+                    {{{blueButtonSignUp}}}
+                    {{{hrefRegSignUp}}}
+                </div>
+            </form>
+        {{/if}}
+    </div>
+</div>
 
