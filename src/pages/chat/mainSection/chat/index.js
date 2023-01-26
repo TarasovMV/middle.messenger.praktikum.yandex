@@ -5,11 +5,13 @@ import photoMessage from "../../../../components/photoMessage";
 import * as settings from '../../../../../static/settingsDots.svg';
 import * as clip from '../../../../../static/clip.svg';
 import * as sentArrow from '../../../../../static/sentArrow.svg';
+import * as noAvatar from '../../../../../static/noAvatar.svg';
 import sentMessage from "../../../../components/sentMessage";
 import inputMessage from "../../../../components/inputMessage";
 
 const data = {
-    photo: '',
+    photo: false,
+    noAvatar: noAvatar,
     name: 'Вадим',
     settingsSvg: settings,
     date: '7 january',

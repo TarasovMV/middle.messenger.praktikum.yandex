@@ -19,11 +19,19 @@
 }
 
 .avatar__chat {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 34px;
     height: 34px;
     background-color: #EFEFEF;
     margin-right: 10px;
     border-radius: 50%;
+}
+
+.noAvatar__chat {
+    width: 18px;
+    height: 18px;
 }
 
 .name__chat {
