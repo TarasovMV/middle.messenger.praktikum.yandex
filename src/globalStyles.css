@@ -1,0 +1,75 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    -ms-overflow-style: none;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    color: #1E1E1E;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+}
+
+h1, h2, h3 {
+    padding: 0;
+    margin: 0;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+span {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: Inter;
+    src: url("../static/fonts/AnyConv.com__Inter-Thin.woff") format("woff");
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Inter;
+    src: url("../static/fonts/AnyConv.com__Inter-ExtraLight.woff") format("woff");
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Inter;
+    src: url("../static/fonts/AnyConv.com__Inter-Light.woff") format("woff");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Inter;
+    src: url("../static/fonts/AnyConv.com__Inter-Regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Inter;
+    src: url("../static/fonts/AnyConv.com__Inter-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Inter;
+    src: url("../static/fonts/AnyConv.com__Inter-Bold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+}
+
+

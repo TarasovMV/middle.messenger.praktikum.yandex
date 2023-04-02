@@ -1,0 +1,17 @@
+.container__buttonSettings {
+    width: 100%;
+    padding: 10px 0px;
+    border-bottom: 1px solid #EAEAEA;
+
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 13px;
+}
+
+.container__buttonSettings:last-of-type {
+    border: none;
+}
+
+.a__buttonSettings {
+    text-decoration: none;
+}

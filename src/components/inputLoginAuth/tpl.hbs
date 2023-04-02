@@ -1,0 +1,26 @@
+{{#each this.inputsSignIn}}
+    <label class="wrap__inputLogAndAuth">
+        <input
+                type="{{type}}"
+                class="main__inputLogAndAuth"
+                name="{{name}}"
+                placeholder="&nbsp;"
+                required
+        >
+        <span class="placeholder__inputLogAndAuth">{{label}}</span>
+<!--        <span class="error__inputLogAndAuth"></span>-->
+    </label>
+{{/each}}
+{{#each this.inputsSignUp}}
+    <label class="wrap__inputLogAndAuth">
+        <input
+                type="{{type}}"
+                class="main__inputLogAndAuth"
+                name="{{name}}"
+                placeholder="&nbsp;"
+                required
+        >
+        <span class="placeholder__inputLogAndAuth">{{label}}</span>
+<!--        <span class="error__inputLogAndAuth"></span>-->
+    </label>
+{{/each}}

@@ -1,0 +1,31 @@
+.container__sentMessage {
+    display: flex;
+    max-width: 402px;
+    padding: 11px;
+    position: relative;
+
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+
+    border-radius: 12px 12px 0px 12px;
+    background-color: #E4EDFD;
+}
+
+.check__sentMessage {
+    position: absolute;
+    bottom: 11px;
+    right: 39px;
+}
+
+.time__sentMessage {
+    display: flex;
+    align-items: flex-end;
+    position: absolute;
+    bottom: 11px;
+    right: 11px;
+    font-weight: 500;
+    font-size: 9px;
+    line-height: 9px;
+    color: #3369F3;
+}

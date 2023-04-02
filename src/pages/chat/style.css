@@ -1,0 +1,18 @@
+.main__chat {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.leftSide__chat {
+    display: flex;
+    height: 100%;
+    width: calc(25% + 6px);
+    border-right: 1px solid #EAEAEA;
+}
+
+.rightSide__chat {
+    display: flex;
+    width: calc(75% - 6px);
+    height: 100%;
+}

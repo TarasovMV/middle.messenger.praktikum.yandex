@@ -1,0 +1,41 @@
+<div class="container__chat">
+    <div class="header__chat">
+        <div class="userInfo__chat">
+            <div class="avatar__chat">
+                {{#if photo}}
+                    <img src="{{photo}}" alt="Аватар пользователя" />
+                {{/if}}
+                {{#unless photo}}
+                    <img src="{{noAvatar}}" alt="Нет аватара" class="noAvatar__chat" />
+                {{/unless}}
+            </div>
+            <div class="name__chat">
+                {{name}}
+            </div>
+        </div>
+        <img src="{{settingsSvg}}" alt="Дополнительно" />
+    </div>
+    <div class="messages__chat">
+        <div class="messagesIncoming__chat">
+            <div class="date__chat">
+                <div class="wrapDate__chat">
+                    {{date}}
+                </div>
+            </div>
+            <div class="incoming__chat">
+                {{{incomingMessage}}}
+                {{{photoMessage}}}
+            </div>
+        </div>
+        <div class="messagesSent__chat">
+            {{{sentMessage}}}
+        </div>
+        <div class="footer__chat">
+            <img src="{{clipSvg}}" class="clipSvg__chat" alt="Прикрепить файл" />
+            {{{inputMessage}}}
+            <img src="{{sent}}" class="sentSvg__chat" alt="Отправить сообщение" />
+        </div>
+    </div>
+
+</div>
+

@@ -1,0 +1,40 @@
+<div class="container__mainSectionSettings">
+    <div class="header__mainSectionSettings">
+        {{#if photo}}
+            <img
+                    class="photoImg__mainSectionSettings"
+                    src="{{photo}}"
+                    alt="Аватар пользователя"
+            />
+        {{/if}}
+        {{#unless photo}}
+            <div class="photo__mainSectionSettings">
+                <img src="{{noAvatar}}" alt="Нет аватарки" />
+            </div>
+        {{/unless}}
+        {{#if normal}}
+            <div class="name__mainSectionSettings">
+                {{name}}
+            </div>
+        {{/if}}
+    </div>
+    {{#if normal}}
+        <form autocomplete="off">
+            {{{input}}}
+        </form>
+        {{{buttonSettings}}}
+    {{/if}}
+    {{#if change}}
+        <form autocomplete="off">
+            {{{inputChange}}}
+        </form>
+        {{{simpleButton}}}
+    {{/if}}
+    {{#if changePassword}}
+        <form autocomplete="off">
+            {{{inputsChangePassword}}}
+        </form>
+        {{{simpleButton}}}
+    {{/if}}
+
+</div>

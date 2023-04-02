@@ -1,0 +1,9 @@
+.container__backSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 64px;
+    background-color: #FBFBFB;
+    border-right: 1px solid #EAEAEA;
+}
