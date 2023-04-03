@@ -12,8 +12,3 @@ export class HrefReg extends Block {
         super(tpl, props);
     }
 }
-// const hrefReg = (data) => {
-//     return tpl(data);
-// };
-//
-// export default hrefReg;

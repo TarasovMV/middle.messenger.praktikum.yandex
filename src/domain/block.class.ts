@@ -1,6 +1,6 @@
 import {BlockEvent} from './events.enum';
 import {EventBus} from './event-bus.class';
-import {uuidGenerator} from '../utils/uuid-generator.utill';
+import {uuidGenerator} from '../utils/uuid-generator.utils';
 
 interface BlockMeta<Props extends Object> {
     tagName: string;
@@ -10,20 +10,15 @@ interface BlockMeta<Props extends Object> {
 type Element = any;
 
 export class Block<Props extends Object = any> {
+    props: Props;
+    readonly children: { [key: string]: Block };
     private readonly id: string = uuidGenerator();
     private readonly tplCompile: (params: any) => string;
     private readonly eventBus = new EventBus();
     private readonly _meta: BlockMeta<Props>;
-    private _element: Element = null;
-    props: Props;
-    readonly children: {[key: string]: Block};
-
-    get element(): Element {
-        return this._element;
-    }
 
     constructor(tplCompile: (params: any) => string, propsAndChildren: Props) {
-        const { children, props } = this.getChildren(propsAndChildren);
+        const {children, props} = this.getChildren(propsAndChildren);
 
         this.tplCompile = tplCompile;
         this.props = this._makePropsProxy(props);
@@ -38,6 +33,12 @@ export class Block<Props extends Object = any> {
         this.eventBus.emit(BlockEvent.INIT);
     }
 
+    private _element: Element = null;
+
+    get element(): Element {
+        return this._element;
+    }
+
     _registerEvents(eventBus: EventBus): void {
         eventBus.on(BlockEvent.INIT, this.init.bind(this));
         eventBus.on(BlockEvent.FLOW_CDM, this._componentDidMount.bind(this));
@@ -46,7 +47,7 @@ export class Block<Props extends Object = any> {
     }
 
     _createResources(): void {
-        const { tagName } = this._meta;
+        const {tagName} = this._meta;
         this._element = this._createDocumentElement(tagName);
     }
 
@@ -60,7 +61,8 @@ export class Block<Props extends Object = any> {
         this.eventBus.emit(BlockEvent.FLOW_RENDER);
     }
 
-    componentDidMount(oldProps: Props): void {}
+    componentDidMount(oldProps: Props): void {
+    }
 
     dispatchComponentDidMount(): void {
         this.eventBus.emit(BlockEvent.FLOW_CDM)
@@ -151,6 +153,6 @@ export class Block<Props extends Object = any> {
             }
         });
 
-        return { children, props };
+        return {children, props};
     }
 }

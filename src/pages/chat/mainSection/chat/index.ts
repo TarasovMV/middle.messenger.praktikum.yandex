@@ -1,26 +1,26 @@
-import  tpl from './tpl.hbs';
+import tpl from './tpl.hbs';
 import './style.css'
-import incomingMessage from "../../../../components/incomingMessage";
-import photoMessage from "../../../../components/photoMessage";
+import {dataIncomingMessage, incomingMessage} from "../../../../components/incomingMessage";
+import {photoMessage, dataPhotoMessage} from "../../../../components/photoMessage";
 import * as settings from '../../../../../static/settingsDots.svg';
 import * as clip from '../../../../../static/clip.svg';
 import * as sentArrow from '../../../../../static/sentArrow.svg';
 import * as noAvatar from '../../../../../static/noAvatar.svg';
-import sentMessage from "../../../../components/sentMessage";
-import inputMessage from "../../../../components/inputMessage";
+import {sentMessage, dataSentMessage} from "../../../../components/sentMessage";
+import {dataInputMessage, inputMessage} from "../../../../components/inputMessage";
 
 interface DataChat {
-    photo: boolean;
-    noAvatar: typeof noAvatar;
-    name: string;
-    settingsSvg: typeof settings;
-    date: string;
-    clipSvg: typeof clip;
-    sent: typeof sentArrow;
-    incomingMessage: () => string;
-    photoMessage: () => string;
-    sentMessage: () => string;
-    inputMessage: () => string;
+    photo?: boolean;
+    noAvatar?: typeof noAvatar;
+    name?: string;
+    settingsSvg?: typeof settings;
+    date?: string;
+    clipSvg?: typeof clip;
+    sent?: typeof sentArrow;
+    incomingMessage?: void;
+    photoMessage?: void;
+    sentMessage?: void;
+    inputMessage?: void;
 }
 
 const data: DataChat = {
@@ -31,10 +31,10 @@ const data: DataChat = {
     date: '7 january',
     clipSvg: clip,
     sent: sentArrow,
-    incomingMessage,
-    photoMessage,
-    sentMessage,
-    inputMessage,
+    incomingMessage: incomingMessage(dataIncomingMessage),
+    photoMessage: photoMessage(dataPhotoMessage),
+    sentMessage: sentMessage(dataSentMessage),
+    inputMessage: inputMessage(dataInputMessage),
 };
 
 const chat = () => {
