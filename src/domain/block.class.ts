@@ -8,6 +8,7 @@ interface BlockMeta<Props extends Object> {
 }
 
 type Element = any;
+type EventCallback = (...args: any[]) => void;
 
 export class Block<Props extends Object = any> {
     props: Props;
@@ -16,6 +17,7 @@ export class Block<Props extends Object = any> {
     private readonly tplCompile: (params: any) => string;
     private readonly eventBus = new EventBus();
     private readonly _meta: BlockMeta<Props>;
+    private events: { [key: string]: EventCallback } = {};
 
     constructor(tplCompile: (params: any) => string, propsAndChildren: Props) {
         const {children, props} = this.getChildren(propsAndChildren);
@@ -88,10 +90,28 @@ export class Block<Props extends Object = any> {
         this.eventBus.emit(BlockEvent.FLOW_CDU);
     };
 
+    _addEvents(): void {
+        const {events = {}} = this.props;
+
+        Object.entries(events).forEach(([eventName, eventHandler]) => {
+            this._element.addEventListener(eventName, eventHandler);
+        });
+    }
+
+    _removeEvents(): void {
+        const {events = {}} = this.props;
+
+        Object.entries(events).forEach(([eventName, eventHandler]) => {
+            this._element.removeEventListener(eventName, eventHandler);
+        });
+    }
+
     _render(): void {
         const block = this.render();
         this._element.innerHTML = '';
         this._element.appendChild(block);
+        this._addEvents();
+        this._removeEvents();
     }
 
     render(): any {
