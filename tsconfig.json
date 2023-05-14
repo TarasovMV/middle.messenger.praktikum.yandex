@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "sourceMap": true,
+    "strictNullChecks": true,
+    "types": ["handlebars"],
+    "lib": [
+      "dom",
+      "es2020",
+    ],
+    "typeRoots": ["./node_modules/@types", "src/typing"]
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.js",
+    "src/**/*.hbs"
+  ]
+}
