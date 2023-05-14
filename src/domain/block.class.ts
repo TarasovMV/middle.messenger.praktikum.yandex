@@ -128,7 +128,10 @@ export class Block<Props extends Object = any> {
         Object.values(this.children).forEach(child => {
             const stub = fragment.content.querySelector(`[data-id="${child.id}"]`);
 
-            stub.replaceWith(child.getContent());
+            if (stub) {
+                stub.replaceWith(child.getContent());
+            }
+            
         });
 
         return fragment.content;

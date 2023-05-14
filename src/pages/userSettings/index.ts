@@ -1,11 +1,11 @@
 import tpl from './tpl.hbs';
 import './style.css';
-import backSection from "./backSection";
+import {BackArrow} from "./backSection";
 import {MainSection} from "./mainSection";
 import {ButtonSettings} from "../../components/buttonSettings";
 import * as noAvatar from '../../../static/noAvatar.svg';
-import inputSettings from "../../components/inputSettings";
-import simpleButton from "../../components/simpleButton";
+import {InputSettings} from "../../components/inputSettings";
+import {SimpleButton} from "../../components/simpleButton";
 import {Block} from "../../domain";
 
 const buttons = {
@@ -159,21 +159,22 @@ const dataMainSection = {
     name: 'Вадим',
     normal: true,
     buttonSettings: new ButtonSettings(buttons),
-    input: inputSettings(inputs),
+    input: new InputSettings(inputs),
     change: false,
-    inputChange: inputSettings(inputsChange),
+    inputChange: new InputSettings(inputsChange),
     changePassword: false,
-    inputsChangePassword: inputSettings(inputsChangePassword),
-    simpleButton: simpleButton(simpleButtons),
+    inputsChangePassword: new InputSettings(inputsChangePassword),
+    simpleButton: new SimpleButton(simpleButtons),
 };
 
 const data = {
-    backSection,
+    backSection: new BackArrow(),
     mainSection: new MainSection(dataMainSection),
 };
 
 interface UserSettingsPageProps {
-
+    backSection: BackArrow;
+    mainSection: MainSection,
 }
 
 class UserSettingsPage extends Block<UserSettingsPageProps> {
@@ -194,3 +195,4 @@ const userSettingsPage = () => {
 };
 
 export default userSettingsPage;
+

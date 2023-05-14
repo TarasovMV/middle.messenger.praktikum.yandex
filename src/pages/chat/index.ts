@@ -1,17 +1,17 @@
 import tpl from './tpl.hbs';
 import './style.css';
-import chatsSection from "./chatsSection";
-import mainSection from "./mainSection";
+import {ChatsSection} from "./chatsSection";
+import {MainSection} from "./mainSection";
 import {Block} from "../../domain";
 
 interface ComponentsChatPage {
-    chatsSection: () => string;
-    mainSection: () => string;
+    chatsSection: ChatsSection;
+    mainSection: MainSection;
 }
 
 export const components = {
-    chatsSection,
-    mainSection
+    chatsSection: new ChatsSection(),
+    mainSection: new MainSection(),
 }
 
 function render(block: any) {
