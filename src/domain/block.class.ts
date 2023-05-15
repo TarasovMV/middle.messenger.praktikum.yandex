@@ -131,7 +131,7 @@ export class Block<Props extends Object = any> {
             if (stub) {
                 stub.replaceWith(child.getContent());
             }
-            
+
         });
 
         return fragment.content;

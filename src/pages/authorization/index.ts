@@ -4,9 +4,10 @@ import {InputLoginAuth} from "../../components/inputLoginAuth";
 import {BlueButton} from "../../components/blueButton";
 import {HrefReg} from "../../components/hrefReg";
 import {Block} from '../../domain';
+import {FormValidator, ValidationObject} from "../../utils/validate";
 
 const button = new BlueButton({label: 'Авторизоваться'});
-setTimeout(() => button.setProps({label: '1'}),3000);
+setTimeout(() => button.setProps({label: '1'}), 3000);
 
 interface AuthorizationPageProps {
     titleSignIp?: string;
@@ -107,6 +108,7 @@ export const dataRegistration = {
     hrefRegSignUp: new HrefReg({href: '/sign-in', value: 'Войти'}),
 }
 
+
 function render(block: any) {
     const root = document.getElementById('root');
     root!.appendChild(block.getContent());
@@ -115,6 +117,20 @@ function render(block: any) {
 
 const authorizationPage = (type: 'auth' | 'reg') => {
     const authPage = new AuthorizationPage(type === 'auth' ? dataAuthorization : dataRegistration);
+    document.addEventListener("DOMContentLoaded", () => {
+        const form = document.getElementById("form__login__auth") as HTMLFormElement;
+        const validations: ValidationObject = {
+            first_name: (value: string) => /^[a-zA-Zа-яА-Я]+(?:-[a-zA-Zа-яА-Я]+)*$/.test(value),
+            second_name: (value: string) => /^[a-zA-Zа-яА-Я]+(?:-[a-zA-Zа-яА-Я]+)*$/.test(value),
+            login: (value: string) => /^[a-zA-Z][a-zA-Z0-9-_]{2,19}$/.test(value),
+            email: (value: string) => /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value),
+            password: (value: string) => /^(?=.*\d)(?=.*[A-Z]).{8,40}$/.test(value),
+            phone: (value: string) => /^\+?\d{10,15}$/.test(value),
+            message: (value: string) => value.trim() !== "",
+        };
+
+        new FormValidator(form, validations)
+    })
     render(authPage);
 }
 
