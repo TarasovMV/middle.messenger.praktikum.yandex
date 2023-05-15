@@ -2,11 +2,12 @@
     <h2>Главная страница навигации</h2>
     <nav>
         <ul class="index__ul">
-            {{#each this.pages}}
+            {{#each pages}}
                 <li>
-                    <a href="{{link}}">{{title}}</a>
+                    <a id="{{link}}-button" href="{{link}}">{{title}}</a>
                 </li>
             {{/each}}
+            {{{link}}}
         </ul>
     </nav>
 </div>

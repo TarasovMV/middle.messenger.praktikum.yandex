@@ -19,14 +19,14 @@ export class Block<Props extends Object = any> {
     private readonly _meta: BlockMeta<Props>;
     private events: { [key: string]: EventCallback } = {};
 
-    constructor(tplCompile: (params: any) => string, propsAndChildren: Props) {
+    constructor(tplCompile: (params: any) => string, propsAndChildren: Props, tagName = 'div') {
         const {children, props} = this.getChildren(propsAndChildren);
 
         this.tplCompile = tplCompile;
         this.props = this._makePropsProxy(props);
         this.children = children;
         this._meta = {
-            tagName: 'div',
+            tagName,
             props
         };
 
@@ -64,6 +64,7 @@ export class Block<Props extends Object = any> {
     }
 
     componentDidMount(oldProps: Props): void {
+
     }
 
     dispatchComponentDidMount(): void {
@@ -94,7 +95,7 @@ export class Block<Props extends Object = any> {
         const {events = {}} = this.props;
 
         Object.entries(events).forEach(([eventName, eventHandler]) => {
-            this._element.addEventListener(eventName, eventHandler);
+            this._element.firstElementChild.addEventListener(eventName, eventHandler);
         });
     }
 
@@ -102,16 +103,16 @@ export class Block<Props extends Object = any> {
         const {events = {}} = this.props;
 
         Object.entries(events).forEach(([eventName, eventHandler]) => {
-            this._element.removeEventListener(eventName, eventHandler);
+            this._element.firstElementChild?.removeEventListener(eventName, eventHandler);
         });
     }
 
     _render(): void {
+        this._removeEvents();
         const block = this.render();
         this._element.innerHTML = '';
         this._element.appendChild(block);
         this._addEvents();
-        this._removeEvents();
     }
 
     render(): any {
@@ -162,6 +163,10 @@ export class Block<Props extends Object = any> {
 
     hide(): void {
         this._element.style.display = 'none';
+    }
+
+    destroy(): void {
+        this._removeEvents();
     }
 
     private getChildren(propsAndChildren: Props) {

@@ -8,4 +8,4 @@ export class ErrorPage extends Block<Page500Data | Page404Data | string> {
     constructor(props: Page500Data | Page404Data | string) {
         super(tpl, props);
     }
-};
+}

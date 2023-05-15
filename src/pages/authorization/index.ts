@@ -5,8 +5,6 @@ import {BlueButton} from "../../components/blueButton";
 import {HrefReg} from "../../components/hrefReg";
 import {Block} from '../../domain';
 
-const button = new BlueButton({label: 'Авторизоваться'});
-setTimeout(() => button.setProps({label: '1'}),3000);
 
 interface AuthorizationPageProps {
     titleSignIp?: string;
@@ -21,8 +19,14 @@ interface AuthorizationPageProps {
     hrefRegSignIn?: Block;
 }
 
-class AuthorizationPage extends Block<AuthorizationPageProps> {
-    constructor(propsAndChildren: AuthorizationPageProps) {
+export class AuthorizationPage extends Block<AuthorizationPageProps> {
+    constructor(propsAndChildren: AuthorizationPageProps = dataAuthorization) {
+        super(tpl, propsAndChildren);
+    }
+}
+
+export class RegistrationPage extends Block<AuthorizationPageProps> {
+    constructor(propsAndChildren: AuthorizationPageProps = dataRegistration) {
         super(tpl, propsAndChildren);
     }
 }
@@ -106,16 +110,3 @@ export const dataRegistration = {
     blueButtonSignUp: new BlueButton({label: 'Зарегистрироваться'}),
     hrefRegSignUp: new HrefReg({href: '/sign-in', value: 'Войти'}),
 }
-
-function render(block: any) {
-    const root = document.getElementById('root');
-    root!.appendChild(block.getContent());
-    return root;
-}
-
-const authorizationPage = (type: 'auth' | 'reg') => {
-    const authPage = new AuthorizationPage(type === 'auth' ? dataAuthorization : dataRegistration);
-    render(authPage);
-}
-
-export default authorizationPage;
