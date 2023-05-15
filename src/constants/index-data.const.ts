@@ -18,6 +18,12 @@ export const ERROR_PAGE: Page = {
     component: Page500,
 };
 
+async function checkAuth() {
+    return new Promise((resolve) => {
+        resolve(true);
+    });
+}
+
 export const INDEX_DATA: IndexData = {
     pages: [
         {
@@ -39,6 +45,7 @@ export const INDEX_DATA: IndexData = {
             title: 'Страница списка чатов и ленты переписок',
             link: 'chat',
             component: ChatPage,
+            guard: async () => await checkAuth(),
         },
         {
             title: 'Страница настроек пользователя',

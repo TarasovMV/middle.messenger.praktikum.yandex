@@ -17,11 +17,14 @@ export class Router {
         Router.instance = this;
     }
 
-    use(pathname, block, guard: () => Promise<string | true> =
-        () => new Promise((resolve) => {
-            resolve(true);
-        })
+    use(pathname, block, guard?: () => Promise<string | true>
     ) {
+        if (!guard) {
+            guard =
+                () => new Promise((resolve) => {
+                    resolve(true);
+                });
+        }
         const route = new Route(pathname, block, {rootQuery: this.rootQuery}, guard);
         this.routes.push(route);
 
